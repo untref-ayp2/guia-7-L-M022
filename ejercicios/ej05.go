@@ -4,5 +4,10 @@ package ejercicios
 // elementos hay en una pila y no altere el contenido de
 // la misma. La pila sólo tiene los métodos Push, Pop y isEmpty.
 func CantidadDeElementos(pila Stack) int {
-	panic("Not implemented")
+
+	if !pila.IsEmpty() {
+		pila.Pop()
+		return CantidadDeElementos(pila) + 1
+	}
+	return 0
 }
